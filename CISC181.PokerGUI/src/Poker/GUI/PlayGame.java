@@ -259,6 +259,7 @@ public class PlayGame {
 		}
 		
 		//community
+		
 		Hand com = new Hand();
 		for (int i=0; i<5; i++){
 			Card c = d.drawFromDeck();
@@ -267,16 +268,6 @@ public class PlayGame {
 		
 		// decides the winner on a label
 
-		Collections.sort(players, Player.PlayerRank);
-		for (Player PLAYER: players){
-			if (PLAYER==players.get(0)){
-				PLAYER.setWinner(true);
-				}
-			else{
-				PLAYER.setWinner(false);
-			}
-					
-					}
 		
 		for (Player p:players){
 			p.getClient().playerUpdated(p);
@@ -313,18 +304,7 @@ public class PlayGame {
 			com.AddCardToHand(c);	
 		}
 		
-		// decides the winner on a label
 
-		Collections.sort(players, Player.PlayerRank);
-		for (Player PLAYER: players){
-			if (PLAYER==players.get(0)){
-				PLAYER.setWinner(true);
-				}
-			else{
-				PLAYER.setWinner(false);
-			}
-					
-					}
 		for (Player p:players){
 			p.getClient().playerUpdated(p);
 			p.getClient().playerActed(p);

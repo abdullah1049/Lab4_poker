@@ -51,7 +51,7 @@ public class BoardPanel extends JPanel {
 			cardLabels = new JLabel[NO_OF_CARDS];
 			for (int i = 0; i < 5; i++) {
 				cardLabels[i] = new JLabel(
-						ResourceManager.getIcon("/img/card_placeholder.png"));
+						ResourceManager.getIcon("/img/card_back.png"));
 				gc.gridx = i;
 				gc.gridy = 2;
 				gc.gridwidth = 1;
@@ -67,7 +67,7 @@ public class BoardPanel extends JPanel {
 		else{
 			cardLabels= new JLabel[NO_OF_CARDS];
 			for (int i=0; i<5;i++){
-				cardLabels[i]= new JLabel(ResourceManager.getIcon("/img/card_placeholder.png"));
+				cardLabels[i]= new JLabel(ResourceManager.getIcon("/img/card_back.png"));
 				gc.gridx = i;
 				gc.gridy = 2;
 				gc.gridwidth = 1;

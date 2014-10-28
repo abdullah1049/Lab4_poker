@@ -77,6 +77,14 @@ public class PlayerPanel extends JPanel implements ActionListener {
 	
 	
 	
+	
+
+	public void setCardLabels(JLabel[] cardLabels) {
+		this.cardLabels = cardLabels;
+	}
+
+
+
 	/** The board panel. */
 	private BoardPanel boardPanel;
 
@@ -243,10 +251,10 @@ public class PlayerPanel extends JPanel implements ActionListener {
 		return button;
 	}
 
-	public  void update(Player p)
+	public  void update(Player playerr)
 	{		
-		ArrayList<Card> cardsinHand = p.GetHand().getCards();
-		int HandSize = p.GetHand().getCards().size();
+		ArrayList<Card> cardsinHand = playerr.GetHand().getCards();
+		int HandSize = playerr.GetHand().getCards().size();
 		
 			int i=0;			
 			for (Card c: cardsinHand)
@@ -266,7 +274,7 @@ public class PlayerPanel extends JPanel implements ActionListener {
 				
 			}
 			
-		Hand h = p.GetHand();
+		Hand h = playerr.GetHand();
 	     for(eHandStrength eHS : eHandStrength.values()) { 
 	    	 if (eHS.getHandStrength() == h.getHandStrength())
 	    	 {
@@ -274,7 +282,7 @@ public class PlayerPanel extends JPanel implements ActionListener {
 
 	    	 }
 	      }
-	     if (p.isWinner()){
+	     if (playerr.isWinner()){
 	    	winner_label.setText("Winner") ;
 	     }
 	     else{
@@ -285,7 +293,9 @@ public class PlayerPanel extends JPanel implements ActionListener {
 	     }
 	
 	
-	
+	public JLabel[] getCardLabels1() {
+		return cardLabels;
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
